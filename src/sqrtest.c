@@ -31,8 +31,7 @@ int do_sqr_test(int countIterations, uint flags) {
             local_irq_disable();
         fast_s_mp_sqr(&a, &a, SqrResult);
         if (FLAG_SET(0x00000002))
-            local_irq_disable();
-        local_irq_enable();
+            local_irq_enable();
 
         // see if the failure occurred by 
         if (memcmp(SqrResult, ExpectedSqrResult, sizeof(SqrResult))) { 
